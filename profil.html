@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Amicale Gil</title>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <p>
+                            <img src="nephi.png" >
+                        </p>
+                        <p>
+                            <a href="#">Changer ma photo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                            <h3>Jean Neige</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Mes informations
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <p>Mon adresse mail : jeanneige@lycos.fr</p>
+                                        <form method="POST" action="#">
+                                            <div class="form-group">
+                                                <label for="email">Modifier l'adresse email :</label>
+                                                <input type="email" name="email" id="email">
+                                            </div>
+                                            <input type="submit" class="btn btn-primary" value="Validez">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <p>pseudo : jndu76</p>
+                                        <form method="POST" action="#">
+                                            <div class="form-group">
+                                                <label for="pseudo">Modifier mon pseudo :</label>
+                                                <input type="text" name="pseudo" id="pseudo">
+                                            </div>
+                                            <input type="submit" class="btn btn-primary" value="Validez">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <p>CV : <a href="#">Voir mon cv</a></p>
+                                        <form method="POST" action="#">
+                                            <div class="form-group">
+                                                <label for="cv">Modifier mon cv :</label>
+                                                <input type="text" name="cv" id="cv" placeholder="lien vers cv">
+                                            </div>
+                                            <input type="submit" class="btn btn-primary" value="Validez">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Mes compètences
+                    </div>
+                    <div class="panel-body">
+                        <span class="label label-primary">PHP</span>
+                        <span class="label label-warning">JAVA</span>
+                        <span class="label label-danger">SYMFONY</span>
+                        <span class="label label-info">PHPSTORM</span>
+                        (Ajouter, modier ou supprimer)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
