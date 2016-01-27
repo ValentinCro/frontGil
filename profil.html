@@ -7,107 +7,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
 
-    <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="panel panel-default">
-                    <div class="panel-body text-center">
-                        <p>
-                            <img src="nephi.png" >
-                        </p>
-                        <p>
-                            <a href="#">Changer ma photo</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="panel panel-default">
-                    <div class="panel-body text-center">
-                            <h3>Jean Neige</h3>
-                    </div>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand hamburger" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+            <aside class="sidebar">
+                <nav class="nav">
+                    <ul class="nav-items">
+                        <li class="nav-title">Navigation</li>
+                        <li><a href="http://amicale.valentincrochemore.fr" class="nav-link">Accueil</a></li>
+                        <li><a href="#" class="nav-link">Annonces</a></li>
+                        <li><a href="#" class="nav-link">Hall</a></li>
+                        <li><a href="#" class="nav-link">Salon</a></li>
+                        <li><a href="#" class="nav-link">Agenda</a></li>
+                    </ul>
+                    <div class="sidebar-separator"></div>
+                    <ul class="nav-items">
+                        <li class="nav-title">Liens utiles</li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
+                        <li><a href="#" class="nav-link">Support</a></li>
+                        <li><a href="#" class="nav-link">Careers</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <a href="#" class="navbar-brand" >AGIL</a>
+            <a href="#" class="navbar-mobile right"><span class="glyphicon glyphicon-cog"></span></a>
+            <a href="#" class="navbar-mobile right"><span class="glyphicon glyphicon-off"></span></a>
+            <a href="#" class="navbar-mobile right"><span class="glyphicon glyphicon-search"></span></a>
+            <a href="http://amicale.valentincrochemore.fr/profil.html" class="navbar-mobile right"><span class="glyphicon glyphicon-user"></span></a>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav><div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-body text-center">
+                    <p>
+                        <img src="nephi.png" >
+                    </p>
+                    <p>
+                        <a href="#">Changer ma photo</a>
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Mes informations
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <p>Mon adresse mail : jeanneige@lycos.fr</p>
-                                        <form method="POST" action="#">
-                                            <div class="form-group">
-                                                <label for="email">Modifier l'adresse email :</label>
-                                                <input class="form-control" type="email" name="email" id="email">
+        <div class="col-sm-12 col-xs-12 col-md-8 col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-body text-center">
+                    <h3>Jean Neige</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Informations générales
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <p>Adresse mail : jeanneige@lycos.fr</p>
+                                    <form method="POST" action="#">
+                                        <div class="form-group">
+                                            <label for="email">Modifier l'adresse email :</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">@</div>
+                                                <input type="email" class="form-control" name="email" id="email">
                                             </div>
-                                            <input type="submit" class="btn btn-primary" value="Validez">
-                                        </form>
-                                    </div>
+                                        </div>
+                                        <input type="submit" class="btn btn-primary" value="Validez">
+                                    </form>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <p>pseudo : jndu76</p>
-                                        <form method="POST" action="#">
-                                            <div class="form-group">
-                                                <label for="pseudo">Modifier mon pseudo :</label>
+                        </div>
+                        <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <p>Pseudo : jndu76</p>
+                                    <form method="POST" action="#">
+                                        <div class="form-group">
+                                            <label for="pseudo">Modifier le pseudo :</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
                                                 <input class="form-control" type="text" name="pseudo" id="pseudo">
                                             </div>
-                                            <input type="submit" class="btn btn-primary" value="Validez">
-                                        </form>
-                                    </div>
+                                        </div>
+                                        <input type="submit" class="btn btn-primary" value="Validez">
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <p>CV : <a href="#">Voir mon cv</a></p>
-                                        <form method="POST" action="#">
-                                            <div class="form-group">
-                                                <label for="cv">Modifier mon cv :</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <p>CV : <a href="#">lien du cv</a></p>
+                                    <form method="POST" action="#">
+                                        <div class="form-group">
+                                            <label for="cv">Modifier le cv :</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><span class="glyphicon glyphicon-file"></span></div>
                                                 <input class="form-control" type="text" name="cv" id="cv" placeholder="lien vers cv">
                                             </div>
-                                            <input type="submit" class="btn btn-primary" value="Validez">
-                                        </form>
-                                    </div>
+                                        </div>
+                                        <input type="submit" class="btn btn-primary" value="Validez">
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Mes compètences
-                    </div>
-                    <div class="panel-body">
-                        <span class="label label-primary">PHP</span>
-                        <span class="label label-warning">JAVA</span>
-                        <span class="label label-danger">SYMFONY</span>
-                        <span class="label label-info">PHPSTORM</span>
-                        (Ajouter, modier ou supprimer)
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Compétences
+                </div>
+                <div class="panel-body">
+                    <span class="label label-primary">PHP</span>
+                    <span class="label label-warning">JAVA</span>
+                    <span class="label label-danger">SYMFONY</span>
+                    <span class="label label-info">PHPSTORM</span>
+                    (Ajouter, modier ou supprimer)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-xs-12">
+                <a href="#"><img src="logo.png" alt="logo univ" width="60px"></a>
+            </div>
+            <div class="col-lg-4 col-xs-12">
+                <p><h5>Liens utiles</h5>
+                <ul>
+                    <li>ENT</li>
+                    <li>WebMail</li>
+                    <li>Université de rouen</li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-xs-12">
+                Lorem ipsum dolor sit amet, placerat integer dolor gravida ullamcorper. Malesuada dolor euismod curabitur
+                ante, massa sit et tincidunt, eget orci, hac nibh in aliquam id laoreet, molestie eleifend augue placerat.
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="js/menu.js"></script>
 </body>
 </html>
+
+
