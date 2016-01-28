@@ -29,3 +29,7 @@ container.addEventListener('click', function(e){
         hideSidebar();
     }
 }, true);
+
+$(document).scroll(function() {
+    hideSidebar();
+});

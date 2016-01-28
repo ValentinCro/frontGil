@@ -1,3 +1,128 @@
-.navbar-center {
-  margin-left:35% !important;
+.navbar-header {
+  width:100%;
+}
+
+.navbar-header li {
+  list-style: none;
+}
+
+
+.navbar-header a {
+  color : #666;
+  list-style: none;
+}
+
+.navbar-mobile {
+  float: left;
+  padding: 20.5px 15px;
+  font-size: 14px;
+  line-height: 23px;
+  height: 64px;
+  color : #666;
+}
+
+.navbar-dropdown-mobile {
+  float: left;
+  padding: 6.5px 10px;
+  font-size: 14px;
+  line-height: 23px;
+  height: 64px;
+  color : #666;
+}
+
+.right {
+  float: right;
+}
+
+
+.navbar-mobile:hover, .navbar-header a:hover {
+  color : #212121;
+  text-decoration: none;
+}
+
+.nav-title {
+  display: block;
+  padding: 10px 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #FFF;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 50px;
+  text-decoration: none;
+  color: #FFF;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link-active {
+  background-color:#D55400;
+}
+
+.nav-link:hover { background-color: #D55400; }
+
+.sidebar-separator {
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 2px;
+  background-color: #000;
+  border-bottom: 1px solid grey;
+}
+
+/* Animation */
+
+.nav-items:last-of-type { margin-bottom: 110px }
+
+.sidebar {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.hamburger {
+  border: none;
+  background-color:#FFF;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  margin-top:65px;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background: #334960;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px #888888;
+  -webkit-transform: translate3d(-260px, 0, 0);
+  transform: translate3d(-260px, 0, 0);
+  transition-property: transform;
+  overflow-y:auto;
+}
+
+.sidebar, .sidebar a { color: #FFF; }
+
+.nav-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Animation */
+.main, .sidebar {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Show Sidebar */
+
+.show-sidebar .sidebar {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }

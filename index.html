@@ -18,42 +18,60 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand hamburger" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+            <button class="navbar-brand hamburger"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
             <aside class="sidebar">
                 <nav class="nav">
                     <ul class="nav-items">
                         <li class="nav-title">Navigation</li>
-                        <li><a href="http://amicale.valentincrochemore.fr" class="nav-link">Accueil</a></li>
-                        <li><a href="#" class="nav-link">Annonces</a></li>
-                        <li><a href="#" class="nav-link">Hall</a></li>
-                        <li><a href="#" class="nav-link">Salon</a></li>
-                        <li><a href="#" class="nav-link">Agenda</a></li>
+                        <li><a href="http://amicale.valentincrochemore.fr" class="nav-link nav-link-active">
+                            <span class="glyphicon glyphicon-home"></span>
+                            Accueil
+                        </a></li>
+                        <li><a href="#" class="nav-link">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            Annonces
+                        </a></li>
+                        <li><a href="#" class="nav-link">
+                            <span class="glyphicon glyphicon-picture"></span>
+                            Hall
+                        </a></li>
+                        <li><a href="#" class="nav-link">
+                            <span class="glyphicon glyphicon-comment"></span>
+                            Salon
+                        </a></li>
+                        <li><a href="#" class="nav-link">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            Agenda</a></li>
                     </ul>
                     <div class="sidebar-separator"></div>
                     <ul class="nav-items">
                         <li class="nav-title">Liens utiles</li>
-                        <li><a href="#" class="nav-link">Contact</a></li>
-                        <li><a href="#" class="nav-link">Support</a></li>
-                        <li><a href="#" class="nav-link">Careers</a></li>
-                        <li><a href="#" class="nav-link">Contact</a></li>
-                        <li><a href="#" class="nav-link">Support</a></li>
-                        <li><a href="#" class="nav-link">Careers</a></li>
-                        <li><a href="#" class="nav-link">Contact</a></li>
-                        <li><a href="#" class="nav-link">Support</a></li>
-                        <li><a href="#" class="nav-link">Careers</a></li>
-                        <li><a href="#" class="nav-link">Contact</a></li>
-                        <li><a href="#" class="nav-link">Support</a></li>
-                        <li><a href="#" class="nav-link">Careers</a></li>
+                        <li><a href="#" class="nav-link">Ent</a></li>
+                        <li><a href="#" class="nav-link">Webmail</a></li>
                     </ul>
                 </nav>
             </aside>
-            <a href="#" class="navbar-brand">AGIL</a>
-            <a href="#" class="navbar-mobile right"><span class="glyphicon glyphicon-cog"></span></a>
-            <a href="#" class="navbar-mobile right"><span class="glyphicon glyphicon-off"></span></a>
+            <a href="#"><img class="img-responsive navbar-mobile" src="logo.png" alt="logo univ"></a>
+            <a href="#" class="navbar-mobile">AGIL</a>
+            <li class="dropdown navbar-dropdown-mobile right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img class="img-circle img-responsive" src="nephi.png" width="50px"></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li>
+                        <a href="http://amicale.valentincrochemore.fr/profil.html">
+                            <span class="glyphicon glyphicon-user"></span> Profil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-cog"></span> Paramètre de profil</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-off"></span> Déconnexion</a>
+                    </li>
+                </ul>
+            </li>
             <a href="#" class="navbar-mobile right"><span class="glyphicon glyphicon-search"></span></a>
-            <a href="http://amicale.valentincrochemore.fr/profil.html" class="navbar-mobile right">
-                <span class="glyphicon glyphicon-user"></span>
-            </a>
         </div>
     </div><!-- /.container-fluid -->
 </nav>
@@ -257,9 +275,6 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 col-xs-12">
-                    <a href="#"><img src="logo.png" alt="logo univ" width="60px"></a>
-                </div>
                 <div class="col-lg-4 col-xs-12">
                     <p><h5>Liens utiles</h5>
                     <ul>
