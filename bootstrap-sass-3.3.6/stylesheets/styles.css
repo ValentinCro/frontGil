@@ -1,53 +1,47 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
-/* line 1, ../sass/_amicale.scss */
-.navbar-header {
-  width: 100%;
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/MaterialIcons-Regular.woff) format("woff"), url(../fonts/MaterialIcons-Regular.ttf) format("truetype");
+}
+/* line 14, ../sass/_amicale.scss */
+.material-icons {
+  font-family: 'Material Icons', serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
 }
 
-/* line 5, ../sass/_amicale.scss */
-.navbar-header li {
-  list-style: none;
+/* line 37, ../sass/_amicale.scss */
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-/* line 10, ../sass/_amicale.scss */
-.navbar-header a {
-  color: #666;
-  list-style: none;
+/* line 42, ../sass/_amicale.scss */
+body {
+  padding-top: 80px;
+  padding-bottom: 140px;
 }
 
-/* line 15, ../sass/_amicale.scss */
-.navbar-mobile {
-  float: left;
-  padding: 20.5px 15px;
-  font-size: 14px;
-  line-height: 23px;
-  height: 64px;
-  color: #666;
-}
-
-/* line 24, ../sass/_amicale.scss */
-.navbar-dropdown-mobile {
-  float: left;
-  padding: 6.5px 10px;
-  font-size: 14px;
-  line-height: 23px;
-  height: 64px;
-  color: #666;
-}
-
-/* line 33, ../sass/_amicale.scss */
-.right {
-  float: right;
-}
-
-/* line 38, ../sass/_amicale.scss */
-.navbar-mobile:hover, .navbar-header a:hover {
-  color: #212121;
-  text-decoration: none;
-}
-
-/* line 43, ../sass/_amicale.scss */
+/* line 47, ../sass/_amicale.scss */
 .nav-title {
   display: block;
   padding: 10px 50px;
@@ -56,7 +50,7 @@
   color: #FFF;
 }
 
-/* line 51, ../sass/_amicale.scss */
+/* line 55, ../sass/_amicale.scss */
 .nav-link {
   display: block;
   padding: 10px 50px;
@@ -65,17 +59,17 @@
   transition: background-color 0.3s ease;
 }
 
-/* line 59, ../sass/_amicale.scss */
+/* line 63, ../sass/_amicale.scss */
 .nav-link-active {
   background-color: #D55400;
 }
 
-/* line 63, ../sass/_amicale.scss */
+/* line 67, ../sass/_amicale.scss */
 .nav-link:hover {
   background-color: #D55400;
 }
 
-/* line 65, ../sass/_amicale.scss */
+/* line 71, ../sass/_amicale.scss */
 .sidebar-separator {
   margin-left: 30px;
   margin-right: 30px;
@@ -85,31 +79,22 @@
 }
 
 /* Animation */
-/* line 75, ../sass/_amicale.scss */
+/* line 81, ../sass/_amicale.scss */
 .nav-items:last-of-type {
   margin-bottom: 110px;
 }
 
-/* line 77, ../sass/_amicale.scss */
-.sidebar {
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-
-/* line 82, ../sass/_amicale.scss */
-::-webkit-scrollbar {
-  display: none;
-}
-
-/* line 86, ../sass/_amicale.scss */
+/* line 83, ../sass/_amicale.scss */
 .hamburger {
   border: none;
   background-color: #FFF;
 }
 
 /* Sidebar */
-/* line 92, ../sass/_amicale.scss */
+/* line 89, ../sass/_amicale.scss */
 .sidebar {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
   position: fixed;
   margin-top: 65px;
   z-index: 5;
@@ -126,8 +111,13 @@
   overflow-y: auto;
 }
 
-/* line 109, ../sass/_amicale.scss */
+/* line 108, ../sass/_amicale.scss */
 .sidebar, .sidebar a {
+  color: #FFF;
+}
+
+/* line 109, ../sass/_amicale.scss */
+.sidebar a:hover {
   color: #FFF;
 }
 
@@ -138,18 +128,134 @@
   list-style: none;
 }
 
-/* Animation */
-/* line 118, ../sass/_amicale.scss */
-.main, .sidebar {
-  transition-duration: 0.3s;
+/* line 117, ../sass/_amicale.scss */
+.bar {
+  transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
+  display: block;
+  position: relative;
+  margin-top: 3px;
+  height: 3px;
+  width: 18px;
+  background-color: #666;
+}
+
+/* line 128, ../sass/_amicale.scss */
+textarea {
+  resize: vertical;
+  /* user can resize vertically, but width is fixed */
 }
 
 /* Show Sidebar */
-/* line 125, ../sass/_amicale.scss */
+/* line 133, ../sass/_amicale.scss */
 .show-sidebar .sidebar {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+
+/* line 139, ../sass/_amicale.scss */
+.rotate_up {
+  -ms-transform: translate(-5px, 0.5px) rotate(-45deg);
+  /* IE 9 */
+  -webkit-transform: translate(-5px, 0.5px) rotate(-45deg);
+  /* Chrome, Safari, Opera */
+  transform: translate(-5px, 0.5px) rotate(-45deg);
+}
+
+/* line 145, ../sass/_amicale.scss */
+.rotate_bottom {
+  -ms-transform: translate(-5px, -0.5px) rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: translate(-5px, -0.5px) rotate(45deg);
+  /* Chrome, Safari, Opera */
+  transform: translate(-5px, -0.5px) rotate(45deg);
+}
+
+/* line 151, ../sass/_amicale.scss */
+.animate-middle {
+  -ms-transform: translate(-2px, 0px);
+  /* IE 9 */
+  -webkit-transform: translate(-2px, 0px);
+  /* Chrome, Safari, Opera */
+  transform: translate(-2px, 0px);
+}
+
+/* line 157, ../sass/_amicale.scss */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #444;
+  color: #FFFFFF;
+  margin-left: 0px;
+  border-top: 8px solid #D55400;
+}
+
+/* line 167, ../sass/_amicale.scss */
+.footer * {
+  color: #FFFFFF;
+}
+
+/* line 171, ../sass/_amicale.scss */
+h2.panel-title {
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid #D55400;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+/* line 179, ../sass/_amicale.scss */
+span.panel-title-content {
+  background: #fff;
+  padding: 0 10px;
+}
+
+/* line 183, ../sass/_amicale.scss */
+.navbar-header {
+  width: 100%;
+}
+
+/* line 187, ../sass/_amicale.scss */
+.navbar-header li {
+  list-style: none !important;
+}
+
+/* line 192, ../sass/_amicale.scss */
+.navbar-header > a {
+  color: #666 !important;
+  list-style: none !important;
+}
+
+/* line 197, ../sass/_amicale.scss */
+.navbar-mobile {
+  float: left;
+  padding: 20.5px 15px;
+  font-size: 14px;
+  line-height: 23px;
+  height: 64px;
+  color: #666;
+}
+
+/* line 206, ../sass/_amicale.scss */
+.navbar-dropdown-mobile {
+  float: left;
+  padding: 6.5px 10px;
+  font-size: 14px;
+  line-height: 23px;
+  height: 64px;
+  color: #666;
+}
+
+/* line 215, ../sass/_amicale.scss */
+.right {
+  float: right;
+}
+
+/* line 220, ../sass/_amicale.scss */
+.navbar-mobile:hover, .navbar-header a:hover {
+  color: #212121;
+  text-decoration: none;
 }
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -1578,12 +1684,12 @@ textarea {
 
 /* line 48, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_scaffolding.scss */
 a {
-  color: #2196F3;
+  color: #D55400;
   text-decoration: none;
 }
 /* line 52, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_scaffolding.scss */
 a:hover, a:focus {
-  color: #0a6ebd;
+  color: #893600;
   text-decoration: underline;
 }
 /* line 58, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_scaffolding.scss */
@@ -1849,12 +1955,12 @@ mark,
 
 /* line 5, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
 .text-primary {
-  color: #2196F3;
+  color: #D55400;
 }
 
 /* line 8, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
 a.text-primary:hover {
-  color: #0c7cd5;
+  color: #a24000;
 }
 
 /* line 5, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
@@ -1904,12 +2010,12 @@ a.text-danger:hover {
 
 /* line 5, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
 .bg-primary {
-  background-color: #2196F3;
+  background-color: #D55400;
 }
 
 /* line 8, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
 a.bg-primary:hover {
-  background-color: #0c7cd5;
+  background-color: #a24000;
 }
 
 /* line 5, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
@@ -4251,13 +4357,13 @@ select[multiple].input-lg,
 /* line 60, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-primary {
   color: #fff;
-  background-color: #2196F3;
+  background-color: #D55400;
   border-color: transparent;
 }
 /* line 11, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #0c7cd5;
+  background-color: #a24000;
   border-color: transparent;
 }
 /* line 20, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
@@ -4266,12 +4372,12 @@ select[multiple].input-lg,
 }
 /* line 28, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
 .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
-  background-color: #2196F3;
+  background-color: #D55400;
   border-color: transparent;
 }
 /* line 38, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_buttons.scss */
 .btn-primary .badge {
-  color: #2196F3;
+  color: #D55400;
   background-color: #fff;
 }
 
@@ -4385,7 +4491,7 @@ select[multiple].input-lg,
 
 /* line 85, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link {
-  color: #2196F3;
+  color: #D55400;
   font-weight: normal;
   cursor: pointer;
   border-radius: 0;
@@ -4402,7 +4508,7 @@ select[multiple].input-lg,
 }
 /* line 104, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link:hover, .btn-link:focus {
-  color: #0a6ebd;
+  color: #893600;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4574,7 +4680,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #2196F3;
+  background-color: #D55400;
 }
 
 /* line 101, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_dropdowns.scss */
@@ -5097,7 +5203,7 @@ tbody.collapse.in {
 /* line 46, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navs.scss */
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #2196F3;
+  border-color: #D55400;
 }
 /* line 59, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navs.scss */
 .nav .nav-divider {
@@ -5155,7 +5261,7 @@ tbody.collapse.in {
 /* line 131, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navs.scss */
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #2196F3;
+  background-color: #D55400;
 }
 
 /* line 144, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navs.scss */
@@ -5715,12 +5821,12 @@ tbody.collapse.in {
 
 /* line 528, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse {
-  background-color: #2196F3;
+  background-color: #D55400;
   border-color: transparent;
 }
 /* line 532, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-brand {
-  color: #b2dbfb;
+  color: #ffa86f;
 }
 /* line 534, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
@@ -5733,7 +5839,7 @@ tbody.collapse.in {
 }
 /* line 546, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-nav > li > a {
-  color: #b2dbfb;
+  color: #ffa86f;
 }
 /* line 549, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
@@ -5743,7 +5849,7 @@ tbody.collapse.in {
 /* line 556, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #0c7cd5;
+  background-color: #a24000;
 }
 /* line 564, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus {
@@ -5765,11 +5871,11 @@ tbody.collapse.in {
 /* line 585, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
-  border-color: #0c84e4;
+  border-color: #b14600;
 }
 /* line 593, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #0c7cd5;
+  background-color: #a24000;
   color: #fff;
 }
 @media (max-width: 767px) {
@@ -5783,7 +5889,7 @@ tbody.collapse.in {
   }
   /* line 610, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #b2dbfb;
+    color: #ffa86f;
   }
   /* line 612, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -5793,7 +5899,7 @@ tbody.collapse.in {
   /* line 619, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #fff;
-    background-color: #0c7cd5;
+    background-color: #a24000;
   }
   /* line 627, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
@@ -5803,7 +5909,7 @@ tbody.collapse.in {
 }
 /* line 638, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-link {
-  color: #b2dbfb;
+  color: #ffa86f;
 }
 /* line 640, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-link:hover {
@@ -5811,7 +5917,7 @@ tbody.collapse.in {
 }
 /* line 645, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .btn-link {
-  color: #b2dbfb;
+  color: #ffa86f;
 }
 /* line 647, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .btn-link:hover, .navbar-inverse .btn-link:focus {
@@ -5864,7 +5970,7 @@ tbody.collapse.in {
   padding: 6px 16px;
   line-height: 1.846;
   text-decoration: none;
-  color: #2196F3;
+  color: #D55400;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -5886,7 +5992,7 @@ tbody.collapse.in {
 .pagination > li > a:hover, .pagination > li > a:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
-  color: #0a6ebd;
+  color: #893600;
   background-color: #eeeeee;
   border-color: #ddd;
 }
@@ -5897,8 +6003,8 @@ tbody.collapse.in {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #fff;
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #D55400;
+  border-color: #D55400;
   cursor: default;
 }
 /* line 63, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_pagination.scss */
@@ -6039,20 +6145,20 @@ a.label:hover, a.label:focus {
 
 /* line 44, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_labels.scss */
 .label-default {
-  background-color: #bbb;
+  background-color: #334960;
 }
 /* line 7, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_labels.scss */
 .label-default[href]:hover, .label-default[href]:focus {
-  background-color: #a2a2a2;
+  background-color: #21303f;
 }
 
 /* line 48, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_labels.scss */
 .label-primary {
-  background-color: #2196F3;
+  background-color: #D55400;
 }
 /* line 7, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_labels.scss */
 .label-primary[href]:hover, .label-primary[href]:focus {
-  background-color: #0c7cd5;
+  background-color: #a24000;
 }
 
 /* line 52, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_labels.scss */
@@ -6122,7 +6228,7 @@ a.label:hover, a.label:focus {
 }
 /* line 39, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_badges.scss */
 a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
-  color: #2196F3;
+  color: #D55400;
   background-color: #fff;
 }
 /* line 44, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_badges.scss */
@@ -6218,7 +6324,7 @@ a.badge:hover, a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #2196F3;
+  border-color: #D55400;
 }
 
 /* line 9, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_alerts.scss */
@@ -6357,7 +6463,7 @@ a.thumbnail.active {
   line-height: 23px;
   color: #fff;
   text-align: center;
-  background-color: #2196F3;
+  background-color: #D55400;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -6550,8 +6656,8 @@ a.list-group-item:hover, a.list-group-item:focus {
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #D55400;
+  border-color: #D55400;
 }
 /* line 98, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_list-group.scss */
 .list-group-item.active .list-group-item-heading,
@@ -6565,7 +6671,7 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 /* line 103, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_list-group.scss */
 .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
-  color: #e3f2fd;
+  color: #ffc7a2;
 }
 
 /* line 4, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
@@ -6945,7 +7051,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 /* line 6, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-default > .panel-heading {
   color: #212121;
-  background-color: #D55400;
+  background-color: #FFF;
   border-color: #ddd;
 }
 /* line 11, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
@@ -6954,7 +7060,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 /* line 14, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-default > .panel-heading .badge {
-  color: #D55400;
+  color: #FFF;
   background-color: #212121;
 }
 /* line 20, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
@@ -6964,26 +7070,26 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 
 /* line 229, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_panels.scss */
 .panel-primary {
-  border-color: #2196F3;
+  border-color: #D55400;
 }
 /* line 6, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #FFF;
+  border-color: #D55400;
 }
 /* line 11, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #2196F3;
+  border-top-color: #D55400;
 }
 /* line 14, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-heading .badge {
-  color: #2196F3;
+  color: #FFF;
   background-color: #fff;
 }
 /* line 20, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #2196F3;
+  border-bottom-color: #D55400;
 }
 
 /* line 232, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/_panels.scss */
@@ -8192,24 +8298,24 @@ button.close {
 .navbar-inverse .navbar-form input[type=text],
 .navbar-inverse .navbar-form input[type=password] {
   color: #fff;
-  -webkit-box-shadow: inset 0 -1px 0 #b2dbfb;
-  box-shadow: inset 0 -1px 0 #b2dbfb;
+  -webkit-box-shadow: inset 0 -1px 0 #ffa86f;
+  box-shadow: inset 0 -1px 0 #ffa86f;
 }
 /* line 102, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss */
 .navbar-inverse .navbar-form input[type=text]::-moz-placeholder,
 .navbar-inverse .navbar-form input[type=password]::-moz-placeholder {
-  color: #b2dbfb;
+  color: #ffa86f;
   opacity: 1;
 }
 /* line 104, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss */
 .navbar-inverse .navbar-form input[type=text]:-ms-input-placeholder,
 .navbar-inverse .navbar-form input[type=password]:-ms-input-placeholder {
-  color: #b2dbfb;
+  color: #ffa86f;
 }
 /* line 105, ../../../../compass.app/lib/ruby/compass_extensions/bootstrap-sass-3.2.0.1/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss */
 .navbar-inverse .navbar-form input[type=text]::-webkit-input-placeholder,
 .navbar-inverse .navbar-form input[type=password]::-webkit-input-placeholder {
-  color: #b2dbfb;
+  color: #ffa86f;
 }
 /* line 27, ../sass/_bootswatch.scss */
 .navbar-inverse .navbar-form input[type=text]:focus,
@@ -8249,17 +8355,17 @@ button.close {
 }
 /* line 42, ../sass/_bootswatch.scss */
 .btn-primary:focus {
-  background-color: #2196F3;
+  background-color: #D55400;
 }
 /* line 46, ../sass/_bootswatch.scss */
 .btn-primary:hover, .btn-primary:active:hover {
-  background-color: #0d87e9;
+  background-color: #b64800;
 }
 /* line 51, ../sass/_bootswatch.scss */
 .btn-primary:active {
-  background-color: #0b76cc;
-  background-image: -webkit-radial-gradient(circle, #0b76cc 10%, #2196F3 11%);
-  background-image: radial-gradient(circle, #0b76cc 10%, #2196f3 11%);
+  background-color: #983c00;
+  background-image: -webkit-radial-gradient(circle, #983c00 10%, #D55400 11%);
+  background-image: radial-gradient(circle, #983c00 10%, #d55400 11%);
   background-repeat: no-repeat;
   background-size: 1000%;
   -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -8505,8 +8611,8 @@ input[type=number]:focus,
 [type=email].form-control:focus,
 [type=tel].form-control:focus,
 [contenteditable].form-control:focus {
-  -webkit-box-shadow: inset 0 -2px 0 #2196F3;
-  box-shadow: inset 0 -2px 0 #2196F3;
+  -webkit-box-shadow: inset 0 -2px 0 #D55400;
+  box-shadow: inset 0 -2px 0 #D55400;
 }
 /* line 175, ../sass/_bootswatch.scss */
 textarea[disabled], textarea[readonly],
@@ -8692,8 +8798,8 @@ select.form-control.input-lg,
 /* line 223, ../sass/_bootswatch.scss */
 select:focus,
 select.form-control:focus {
-  -webkit-box-shadow: inset 0 -2px 0 #2196F3;
-  box-shadow: inset 0 -2px 0 #2196F3;
+  -webkit-box-shadow: inset 0 -2px 0 #D55400;
+  box-shadow: inset 0 -2px 0 #D55400;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEUhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISF8S9ewAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
 }
 /* line 228, ../sass/_bootswatch.scss */
@@ -8763,7 +8869,7 @@ input[type="radio"]:before,
   position: absolute;
   left: 0;
   top: -3px;
-  background-color: #2196F3;
+  background-color: #D55400;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   -o-transform: scale(0);
@@ -8796,7 +8902,7 @@ input[type="radio"]:disabled:checked:before,
 input[type="radio"]:checked:after,
 .radio input[type="radio"]:checked:after,
 .radio-inline input[type="radio"]:checked:after {
-  border-color: #2196F3;
+  border-color: #D55400;
 }
 /* line 300, ../sass/_bootswatch.scss */
 input[type="radio"]:disabled:after, input[type="radio"]:disabled:checked:after,
@@ -8828,7 +8934,7 @@ input[type="checkbox"]:focus,
 input[type="checkbox"]:focus:after,
 .checkbox input[type="checkbox"]:focus:after,
 .checkbox-inline input[type="checkbox"]:focus:after {
-  border-color: #2196F3;
+  border-color: #D55400;
 }
 /* line 324, ../sass/_bootswatch.scss */
 input[type="checkbox"]:after,
@@ -8869,8 +8975,8 @@ input[type="checkbox"]:checked:before,
 input[type="checkbox"]:checked:after,
 .checkbox input[type="checkbox"]:checked:after,
 .checkbox-inline input[type="checkbox"]:checked:after {
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #D55400;
+  border-color: #D55400;
 }
 /* line 355, ../sass/_bootswatch.scss */
 input[type="checkbox"]:disabled:after,
@@ -8955,21 +9061,21 @@ input[type="checkbox"]:disabled:checked:after,
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus:hover {
   background-color: transparent;
-  -webkit-box-shadow: inset 0 -2px 0 #2196F3;
-  box-shadow: inset 0 -2px 0 #2196F3;
-  color: #2196F3;
+  -webkit-box-shadow: inset 0 -2px 0 #D55400;
+  box-shadow: inset 0 -2px 0 #D55400;
+  color: #D55400;
 }
 /* line 439, ../sass/_bootswatch.scss */
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus {
   border: none;
-  -webkit-box-shadow: inset 0 -2px 0 #2196F3;
-  box-shadow: inset 0 -2px 0 #2196F3;
-  color: #2196F3;
+  -webkit-box-shadow: inset 0 -2px 0 #D55400;
+  box-shadow: inset 0 -2px 0 #D55400;
+  color: #D55400;
 }
 /* line 445, ../sass/_bootswatch.scss */
 .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus:hover {
   border: none;
-  color: #2196F3;
+  color: #D55400;
 }
 /* line 451, ../sass/_bootswatch.scss */
 .nav-tabs > li.disabled > a {
@@ -9058,7 +9164,7 @@ input[type="checkbox"]:disabled:checked:after,
   left: 0;
   right: 0;
   z-index: -1;
-  background-color: #cae6fc;
+  background-color: #ffb789;
 }
 /* line 544, ../sass/_bootswatch.scss */
 .progress-bar-success:last-child.progress-bar:before {
