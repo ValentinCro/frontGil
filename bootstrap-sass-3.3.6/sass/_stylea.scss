@@ -35,7 +35,9 @@
   transform-origin: $origin;
 }
 
-
+.img-preview{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .animate_up {
   @include rotate(180);
   @include transition(0.5);
@@ -296,6 +298,17 @@ span.panel-title-content {
 .show-sidebar .sidebar {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+
+
+/*  Style du défilé d'image */
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 
