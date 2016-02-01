@@ -89,6 +89,15 @@ body {
   background-color:#FFF;
 }
 
+.label button {
+  border: none;
+  background-color:#334960;
+}
+
+.label button:hover {
+  color:#D55400;
+}
+
 /* Sidebar */
 .sidebar {
   transition-duration: 0.3s;
@@ -225,5 +234,11 @@ span.panel-title-content {
   text-decoration: none;
 }
 
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
 
 
