@@ -1,4 +1,4 @@
-$('.collapse').collapse()
+//$('.collapse').collapse()
 
 $('#myCollapsible').collapse({
     toggle: false
@@ -79,8 +79,8 @@ function verifFormulaireAjoutCategorie() {
 $('.icon-add-cat').click(function () {
     getGlyph();
     var nmId = this.id;
-    $('.icon-add-cat').removeClass("active");
-    $('#' + nmId).addClass("active");
+    this.removeClass("active");
+    this.addClass("active");
 });
 
 function getGlyph() {
@@ -161,7 +161,6 @@ function verifFormAddPost() {
 }
 
 $(document).ready(function () {
-
     $("#owl-demo").owlCarousel({
 
         autoPlay: 3000, //Set AutoPlay to 3 seconds
@@ -173,4 +172,21 @@ $(document).ready(function () {
     });
 });
 
-    $('[data-toggle="tooltip"]').tooltip()
+$('[data-toggle="tooltip"]').tooltip()
+
+
+$('.collapse').on('show.bs.collapse', function () {
+    var $id = $(this).attr("id");
+
+    var $fils = $( "a[aria-controls="+$id+"]").children();
+    //$fils.removeClass("animate_down");
+    $fils.addClass("animate_up");
+});
+
+$('.collapse').on('hide.bs.collapse', function () {
+    var $id = $(this).attr("id");
+
+    var $fils = $( "a[aria-controls="+$id+"]").children();
+    $fils.removeClass("animate_up");
+    //$fils.addClass("animate_down");
+});
