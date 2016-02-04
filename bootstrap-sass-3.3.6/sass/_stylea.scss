@@ -8,6 +8,7 @@
   -ms-transform: $transforms;
   -webkit-transform: $transforms;
   transform: $transforms;
+
 }
 // rotate
 @mixin rotate ($deg) {
@@ -40,19 +41,14 @@
 }
 .animate_up {
   @include rotate(180);
-  @include transition(0.5);
+  //
+
 }
-
-.animate_bot {
-  @include rotate(0);
+.rotate-icon{
   @include transition(0.5);
+  -webkit-transition-timing-function: ease-in-out; /* Safari and Chrome */
+  transition-timing-function: ease-in-out;
 }
-
-
-
-
-
-
 // ----------------------------------------------------
 
 
@@ -144,6 +140,11 @@ $pad: 10px;
   display: block;
   width: 100%;
   height: auto;
+}
+
+.no-margin-top-bot{
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 
