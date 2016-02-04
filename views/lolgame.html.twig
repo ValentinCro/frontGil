@@ -1,0 +1,65 @@
+{% extends "layout.html.twig" %}
+{% set active="game"  %}
+{% set version="Interface de jeu version 1.0-Beta"  %}
+{% block content %}
+    <script src="{{ app.request.basepath }}/js/lolrandom.js"></script>
+        <div class="row">
+            <div class="col s12 l2">
+                <a class="waves-effect waves-light btn" href="{{ path('lolrandom') }}"><i class="material-icons">keyboard_arrow_left</i></a>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col l12">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <span class="card-title black-text">Lien de la partie :</span>
+                            <p>http://dev.valentincrochemore.fr/games/lolGame.php?id={{ id }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l12">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <span class="card-title black-text">Participants :</span>
+                            <div id="participant"></div>
+                            <input type="hidden" id="idGame" value="{{ id }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title black-text">Ton champion :</span>
+                            <div id="champion_get">
+                                <button class="waves-effect waves-light btn" onclick="randomChamp()">Générer champion</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l9">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title black-text">Champions tirés :</span>
+                            <div id="stateGame">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                setInterval("refreshParticipant()", 3000);
+                setInterval("refreshChampGet()", 3000);
+                $(window).bind("beforeunload", function() {
+                    $.post("removeParticipant",
+                        {
+                            idSalle: $("#idGame").val()
+                        },
+                        function (data, status) {
+                        });
+                });
+            </script>
+{% endblock %}

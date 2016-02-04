@@ -1,0 +1,132 @@
+{% extends "layout.html.twig" %}
+{% set active="users"  %}
+{% set version="Interface de jeu version 1.0-Beta"  %}
+{% block content %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-lg-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <h1>{{ user.username }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if app.session.get('user') and user.id ==  app.session.get('user').id %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Changer Adresse mail</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" action="{{ path("check_mail") }}">
+                            <label for="mail">Adresse mail</label>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="icon-mail">@</span>
+                                <input class="form-control" type="email" id="mail" name="mail" aria-describedby="icon-mail">
+                            </div><br/>
+                            <input type="reset" class="btn btn-default" value="Effacez">
+                            <input type="submit" class="btn btn-primary" value="Validez">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Changer de mot de passe</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" action="{{ path("check_password") }}">
+                            <div class="form-group">
+                                <label for="password1">Mot de passe</label>
+                                <input class="form-control" type="password" id="password1" name="password1">
+                            </div>
+                            <div class="form-group">
+                                <label for="password2">Réentrez le mot de passe</label>
+                                <input class="form-control" type="password" id="password2" name="password2">
+                            </div>
+                            <input type="reset" class="btn btn-default" value="Effacez">
+                            <input type="submit" class="btn btn-primary" value="Validez">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+            {% endif %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Reversi</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Nombre de parties :
+                            {{ reversiNbGame }}
+                        </p>
+                        <p>
+                            Nombre de Victoires :
+                            {{ reversiNbVictory }}
+                        </p>
+                        <p>
+                            Nombre de défaites :
+                           {{ reversiNbDefeat }}
+                        </p>
+                        <p>
+                            Ratio de victoires/défaites :
+                            {{ ratioReversi }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Pendu</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Nombre de parties :
+                            {{ penduNbGame }}
+                        </p>
+                        <p>
+                            Nombre de Victoires :
+                            {{ penduNbVictory }}
+                        </p>
+                        <p>
+                            Nombre de défaites :
+                            {{ penduNbDefeat }}
+                        </p>
+                        <p>
+                            Ratio de victoires/défaites :
+                            {{ ratioPendu }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="panel panel-primary ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Champions possédés</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% if champs %}
+                            {% for champ in champs %}
+                                <div class="col-xs-6 col-sm-2 col-lg-1">
+                                    <a href="#" data-content="{{ champ.name }}" data-toggle="popover" data-trigger="hover" class="thumbnail">
+                                        <img src="http://ddragon.leagueoflegends.com/cdn/{{ lolversion }}/img/champion/{{ champ.image }}">
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>Cet utilisateur n'a pas renseigné de champions</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="{{ app.request.basepath }}/js/lolrandom.js"></script>
+{% endblock %}

@@ -1,0 +1,35 @@
+#end {
+	font-size: 32px;
+	margin-top: 4em;
+	margin-left:15%;
+}
+
+#plateau {
+    height: 50%;
+}
+
+#plateau div .col {
+	height: 60px;
+	text-align: center;
+}
+
+.square {
+	min-height: 60px;
+    border:1px solid black;
+}
+
+#plateau div {
+	margin: 0px;
+}
+
+#opt {
+	width:10em;
+}
+
+#leaderBoard {
+	margin-top: 10px;
+}
+
+#stateGame {
+	text-align: center;
+}

@@ -1,0 +1,166 @@
+{% extends "layout.html.twig" %}
+{% set active="cv"  %}
+{% set version="CV version 1.0"  %}
+{% block content %}
+        <!--IDCard titre-->
+        <div class="row">
+            <div class="col-xs-12 col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        {% for id in idcard %}
+                            {{ id.intitule | raw }}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-body text-center">
+                        <h1>{{ titles[1].title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <!--Compétence-->
+		<div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ titles[2].title }} {{  titles[3].title }}</h3>
+                    </div>
+                    <div class="panel-body">
+                    {% for language in languages %}
+                        <div class="row">
+                            <div class="col-xs-6 col-lg-6">
+                                {{ language.intitule }}
+                            </div>
+                            <div class="col-xs-6 col-lg-6">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ language.pourcentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ language.pourcentage }}%;">
+                                        {{ language.pourcentage }}%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ titles[2].title }} {{  titles[4].title }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% for logiciel in logiciels %}
+                            <div class="row">
+                                <div class="col-xs-6 col-lg-6">
+                                    {{ logiciel.intitule }}
+                                </div>
+                                <div class="col-xs-6 col-lg-6">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{ logiciel.pourcentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ logiciel.pourcentage }}%;">
+                                            {{ logiciel.pourcentage }}%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Expérience professionnelles Projet personnels/Universitaires-->
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{  titles[5].title }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% for experience in experiences %}
+                            <div class="row">
+                                <div class="col-xs-12 col-lg-12">
+                                    <strong>{{ experience.intitule }}</strong>
+                                    <p>
+                                        {{ experience.legend }}
+                                        {% for tag in experience.tags %}
+                                            <span class="badge">{{ tag.name }}</span>
+                                        {% endfor %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+			</div>
+            <div class="col-xs-12 col-sm-12 col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{  titles[6].title }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        {% for projet in projets %}
+                            <div class="row">
+                                <div class="col-xs-12 col-lg-12">
+                                    {{ projet.intitule | raw}}
+                                    {% for tag in projet.tags %}
+                                        <span class="badge">{{ tag.name }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+			    </div>
+            </div>
+        </div>
+        <!--Frise chronologique-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ titles[7].title }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="{{ app.request.basepath }}/image/chrono.png" width="100% ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Langue, centre d'intérêt-->
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ titles[8].title }}</h3>
+                    </div>
+                    <div class="panel-body">
+                            {% for langue in langues %}
+                                <div class="row">
+                                    <div class="col-xs-12 col-lg-12">
+                                        {{ langue.intitule | raw}}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                    </div>
+                </div>
+			</div>
+            <div class="col-xs-12 col-sm-12 col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ titles[9].title }}</h3>
+                    </div>
+                    <div class="panel-body">
+                            {% for centre in centres %}
+                                <div class="row">
+                                    <div class="col-xs-12 col-lg-12">
+                                        {{ centre.intitule | raw}}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                    </div>
+                </div>
+			</div>
+        </div>
+{% endblock %}

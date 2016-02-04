@@ -1,0 +1,36 @@
+{% extends "layout.html.twig" %}
+{% set active="login"  %}
+{% set version="Interface de jeu version 1.0-Beta"  %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Connexion</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="{{ path('login_check') }}" method="post">
+                        <div class="form-group">
+                            <label for="username">Pseudo : </label>
+                            <input class="form-control" type='text' name='username' id ='username'
+                                   required='required' pattern='[a-zA-Z0-9\._]+'>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe : </label>
+                            <input class="form-control" type='password' name='password' id='password'>
+                        </div>
+                        <button class="btn btn-default" type='reset' name='reset'>Effacez</button>
+                        <button class="btn btn-primary" type='submit' name='submit'>Validez</button>
+                        <p>
+                            Pas encore inscrit ?
+                            <a href="{{ path('signup') }}">Vous inscrire</a><br/>
+                            Vous pouvez aussi jouer sans être inscrit
+                            (Attention vous ne pourrez pas conserver vos scores.)
+                            <a href="{{ path('game') }}">Jouez</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

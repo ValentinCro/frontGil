@@ -1,0 +1,27 @@
+{% extends "layout.html.twig" %}
+{% set active="game"  %}
+{% set version="Interface de jeu version 1.0-Beta"  %}
+{% block content %}
+        <div class="row">
+            <div class="col-xs-12 col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="game"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-lg-4">
+                {% if app.session.get("connected") %}
+                    <button class="btn btn-default" onclick="toggleScore()">score</button>
+                    <span id="param_score"></span>
+                {% endif %}
+            </div>
+            <div class="col-xs-12 col-sm-5 col-lg-5 col-lg-offset-3">
+                <div id="dude"></div>
+            </div>
+        </div>
+    <div id="modalPlace"></div>
+    <script src="{{ app.request.basepath }}/js/pendu.js"></script>
+{% endblock %}

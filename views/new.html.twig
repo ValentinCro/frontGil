@@ -1,0 +1,61 @@
+{% extends "layout.html.twig" %}
+{% set active="accueil"  %}
+{% set version="Accueil version 1.1"  %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                            {{ new.date }} | {{ new.title }}
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    {{ new.contenu | raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for comment in new.comments %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            {{ comment.date }} | {{ comment.author }}
+                        </h4>
+                    </div>
+                    <div class="panel-body">
+                        {{ comment.content | raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor  %}
+    {% if app.session.get("connected") %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            Nouveaux commentaires
+                        </h4>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" action="{{ path('setComment') }}">
+                            <input name="idNew" type="hidden" value="{{ new.id }}">
+                            <div class="form-group">
+                                <label for="content">Entrez votre commentaire</label>
+                                <textarea class="form-control" id="content" name="content" required></textarea>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Validez</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    {% endif %}
+
+    <script src="{{ app.request.basepath }}/js/utilAccueil.js"></script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html.twig" %}
+{% set active="accueil"  %}
+{% set version="Accueil version 1.1"  %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                            Editer news
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    {% if new is defined %}
+                        <form method="POST" action="{{ path("editNews_check", {"id" : new.id }) }}">
+                    {% else %}
+                        <form method="POST" action="{{ path("editNews_check", {"id" : -1}) }}">
+                    {% endif %}
+                        <div class="form-group">
+                            <label for="title">Titre</label>
+                            <input class="form-control" type="text" id="title" name="title"
+                                    {% if new is defined %} value="{{ new.title }}" {% endif %}>
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Contenue</label>
+                            <textarea class="form-control" id="content" name="content" rows="10">
+                                {% if new is defined %}{{ new.contenu }} {% endif %}
+                            </textarea>
+                        </div>
+                        <input type="reset" value="Effacez" class="btn btn-default">
+                        <input type="submit" value="Validez" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        {% if new is defined %}{{ new.date }} {% endif %} | <div id="title-view">{% if new is defined %}{{ new.title }} {% endif %}</div>
+                    </h4>
+                </div>
+                <div class="panel-body" >
+                    <div id="content-view">{% if new is defined %}{{ new.contenu | raw}} {% endif %}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ app.request.basepath }}/js/utilEditNews.js"></script>
+{% endblock %}

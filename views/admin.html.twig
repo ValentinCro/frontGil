@@ -1,0 +1,152 @@
+{% extends "layout.html.twig" %}
+{% set active="users"  %}
+{% set version="Interface de jeu version 1.0"  %}
+{% block content %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" role="tab" id="heading_player_liste">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_player_liste" aria-expanded="true" aria-controls="collapse_player_liste">
+                                    Liste des joueurs
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse_player_liste" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_player_liste">
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Pseudo</th>
+                                    <th class="text-center">Mail</th>
+                                    <th class="text-center">Supprimer</th>
+                                    </thead>
+                                    <tbody>
+                                    {% for user in users %}
+                                        <tr>
+                                            <td class="text-center">{{ user.id }}</td>
+                                            <td class="text-center">{{ user.username }}</td>
+                                            <td class="text-center">{{ user.mail }}</td>
+                                            <td class="text-center">
+                                                <a class="btn btn-primary" href="{{ path('removeUser', {'id': user.id}) }}">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" role="tab" id="heading_new_liste">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_new_liste" aria-expanded="true" aria-controls="collapse_new_liste">
+                                    Liste des news
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse_new_liste" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_new_liste">
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">Titre</th>
+                                    <th class="text-center">Modifier</th>
+                                    <th class="text-center">Supprimer</th>
+                                    </thead>
+                                    <tbody>
+                                    {% for new in news %}
+                                        <tr>
+                                            <td class="text-center">{{ new.id }}</td>
+                                            <td class="text-center">{{ new.date }}</td>
+                                            <td class="text-center">{{ new.title }}</td>
+                                            <td class="text-center">
+                                                <a class="btn btn-primary" href="{{ path('editNews', {'id': new.id}) }}">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a class="btn btn-primary" href="{{ path('removeNews', {'id': new.id}) }}">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" role="tab" id="heading_project_liste">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_project_liste" aria-expanded="true" aria-controls="collapse_project_liste">
+                                    Liste des Projets
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse_project_liste" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_project_liste">
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Intiuler</th>
+                                    <th class="text-center">Tags</th>
+                                    <th class="text-center">Modifier</th>
+                                    <th class="text-center">Supprimer</th>
+                                    </thead>
+                                    <tbody>
+                                    {% for projet in projets %}
+                                        <tr>
+                                            <td class="text-center">{{ projet.id }}</td>
+                                            <td class="text-center">{{ projet.intitule | raw }}</td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn btn-primary" data-toggle="popover" data-content="
+                                                        {% for tag in projet.tags %}
+                                                            {{ tag.name }}
+                                                        {% endfor %}
+                                                ">Tags</button>
+                                            </td>
+                                            <td class="text-center">
+                                                <a class="btn btn-primary" href="{{ path('editProjet' ,{'id' : projet.id}) }}">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a class="btn btn-primary" href="{{ path('removeProjet' ,{'id' : projet.id}) }}">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" role="tab" id="heading_action_liste">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_action_liste" aria-expanded="true" aria-controls="collapse_action_liste">
+                                    Liste des actions
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse_action_liste" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_action_liste">
+                            <div class="panel-body">
+                                <p class="text-center">
+                                    <a class="btn btn-primary" href="{{ path('addNews') }}">Ajouter news</a>
+                                    <a class="btn btn-primary" href="{{ path('addProjet') }}">Ajouter Projet</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="{{ app.request.basepath }}/js/utilAdmin.js"></script>
+{% endblock %}

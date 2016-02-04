@@ -1,0 +1,46 @@
+{% set active="login"  %}
+{% set version="Interface de jeu version 1.0-Beta"  %}
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Inscription</h3>
+                </div>
+                <div class="panel-body">
+                    <form method="POST" action="{{ path("signup_check") }}">
+                            <div class="form-group has-feedback">
+                                <label for="username" >Pseudo : </label>
+                                <input class="form-control" type='text' name='username' required='required'
+                                       id='username' pattern='[a-zA-Z0-9\._]+' value="{% if pseudo is defined %}{{ pseudo }}{% endif %}">
+                                <span id='stateLogin'  aria-hidden="true"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label for="password">Mot de passe : </label>
+                                <input class="form-control" type='password' name='password' id ='password' required='required'>
+                                <span id='statePass'  aria-hidden="true"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label for="password2">Réentrez le mot de passe : </label>
+                                <input class="form-control" type='password' name='password2' id ='password2' required='required'>
+                                <span id='statePass2'  aria-hidden="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="mail">Adresse mail : </label>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="sizing-addon1">@</span>
+                                    <input class="form-control" type='email' name='mail' id ='mail'
+                                           required='required' aria-describedby="sizing-addon1" value="{% if mail is defined %}{{ mail }}{% endif %}">
+                                </div>
+                            </div>
+                            <button type="reset" class="btn btn-default">Effacez</button>
+                            <button type="submit" class="btn btn-primary">Validez</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ app.request.basepath }}/js/inscription.js"></script>
+{% endblock %}

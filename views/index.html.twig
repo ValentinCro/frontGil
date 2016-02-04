@@ -1,0 +1,33 @@
+{% extends "layout.html.twig" %}
+{% set active="accueil"  %}
+{% set version="Accueil version 2.0"  %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for new in news %}
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="heading{{ new.id }}">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ new.id }}" aria-expanded="true" aria-controls="collapse{{ new.id }}">
+                                {{ new.date }} | {{ new.title }}
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse{{ new.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ new.id }}">
+                        <div class="panel-body">
+                            {{ new.contenu | raw }}
+                            <p>
+                                <a href="{{ path('new', {'id' : new.id}) }}" class="btn btn-primary" type="button">
+                                    Commentaires <span class="badge"> {{ new.NbComments }} </span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script src="{{ app.request.basepath }}/js/utilAccueil.js"></script>
+{% endblock %}
