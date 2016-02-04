@@ -11,11 +11,15 @@
   url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+.navbar-mobile .material-icons{
+  font-size: 18px;
+}
+
 .material-icons {
   font-family: 'Material Icons', serif;
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  font-size: 14px;
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -83,6 +87,15 @@ body {
 .hamburger {
   border: none;
   background-color:#FFF;
+}
+
+.label button {
+  border: none;
+  background-color:#334960;
+}
+
+.label button:hover {
+  color:#D55400;
 }
 
 /* Sidebar */
@@ -216,11 +229,16 @@ span.panel-title-content {
   float: right;
 }
 
-
 .navbar-mobile:hover, .navbar-header a:hover {
   color : #212121;
   text-decoration: none;
 }
 
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
 
 
