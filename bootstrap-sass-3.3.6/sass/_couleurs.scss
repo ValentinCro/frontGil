@@ -1,0 +1,36 @@
+@import "compass/utilities/color/contrast";
+@import 'compass/css3/filter';
+
+$colors : (
+    "purple":#d645de,
+    "red" : #c0392b,
+    "green" : #2ecc71,
+    "blue" : #3498db,
+    "yellow" : #f1c40f,
+    "orange" : #e67e22,
+    "black" : #000000,
+    "grey" :#95a5a6,
+    "cyan" : #95a5a6,
+    "blue-grey" : #34495e,
+    "default" : #34495e
+);
+
+@each $nom, $bgcolor in $colors {
+ .tag-#{$nom} { background-color:$bgcolor; }
+}
+
+@for $i from 1 through 5 {
+    .darker-#{$i}{
+        @include filter(brightness($i * 20%));
+    }
+}
+
+@for $i from 1 through 5 {
+    .lighter-#{$i}{
+        @include filter(brightness(100% + $i * 20%));
+    }
+}
+
+.text-white{
+    color:#ffffff;
+}
